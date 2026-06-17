@@ -10,7 +10,10 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     strategy:
+      fail-fast: false
       matrix:
         arch:
           - x64
